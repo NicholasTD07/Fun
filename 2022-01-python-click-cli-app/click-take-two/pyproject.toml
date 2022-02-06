@@ -6,6 +6,7 @@ authors = ["NicholasTD07 <NicholasTD07@users.noreply.github.com>"]
 
 [tool.poetry.scripts]
 hello = "click_take_two.hello:hello"
+db = "click_take_two.db:cli"
 
 [tool.poetry.dependencies]
 python = "^3.9"
