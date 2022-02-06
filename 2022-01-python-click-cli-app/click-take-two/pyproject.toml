@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "click-take-two"
+version = "0.1.0"
+description = ""
+authors = ["NicholasTD07 <NicholasTD07@users.noreply.github.com>"]
+
+[tool.poetry.scripts]
+hello = "click_take_two.hello:hello"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.0.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
