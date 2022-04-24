@@ -12,7 +12,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink(
-                    destination: EmptyView()
+                    destination: CounterView()
                 ) {
                     Text("Counter Demo")
                 }
@@ -26,6 +26,30 @@ struct ContentView: View {
             // On the List
             .navigationBarTitle("State Management")
         }
+    }
+}
+
+struct CounterView: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Button(action: {}) {
+                        Text("-")
+                }
+                Text("0")
+                Button(action: {}) {
+                        Text("+")
+                }
+            }
+            Button(action: {}) {
+                    Text("Is this prime?")
+            }
+            Button(action: {}) {
+                    Text("What is the 0th prime?")
+            }
+        }
+        .font(.title)
+        .navigationTitle("Counter Demo")
     }
 }
 
