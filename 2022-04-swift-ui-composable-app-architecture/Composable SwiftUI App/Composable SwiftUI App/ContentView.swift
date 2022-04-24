@@ -175,6 +175,8 @@ struct IsPrimeSheetView: View {
 struct CounterView: View {
     @ObservedObject var state: AppState
     @State var isPrimeSheetShown: Bool = false
+    @State var nthPrimeAlertShown: Bool = false
+    @State var nthPrime: Int?
 
     var body: some View {
         VStack {
@@ -197,8 +199,15 @@ struct CounterView: View {
                 Text("Is this prime?")
             }
             Button {
-                nthPrime(state.count) { optionalPrime in
-                    print(optionalPrime)
+                Composable_SwiftUI_App.nthPrime(state.count) { optionalPrime in
+                    guard let prime = optionalPrime else {
+                        return
+                    }
+                    
+                    print(prime)
+                    
+                    nthPrime = prime
+                    nthPrimeAlertShown = true
                 }
             } label: {
                 Text("What is the \(ordinal(state.count)) prime?")
@@ -211,6 +220,14 @@ struct CounterView: View {
         } content: {
             IsPrimeSheetView(state: state)
         }
+        .alert("nth Prime", isPresented: $nthPrimeAlertShown) {
+            Text("Ok")
+        } message: {
+            // the Text below gets build even before the alert is shown
+            // can't have nthPrime! otherwise... crashes...
+            Text("The \(ordinal(state.count)) prime is \(nthPrime ?? 0)")
+        }
+
     }
 }
 
