@@ -29,23 +29,35 @@ struct ContentView: View {
     }
 }
 
+private func ordinal(_ n: Int) -> String {
+    let formatter = NumberFormatter()
+    
+    formatter.numberStyle = .ordinal
+    
+    return formatter.string(for: n)!
+}
+
 struct CounterView: View {
+    @State var count: Int = 0
+
     var body: some View {
         VStack {
             HStack {
-                Button(action: {}) {
+                Button(action: { count -= 1 }) {
                         Text("-")
                 }
-                Text("0")
-                Button(action: {}) {
+                Text("\(count)")
+                Button(action: { count += 1 }) {
                         Text("+")
                 }
             }
             Button(action: {}) {
                     Text("Is this prime?")
             }
-            Button(action: {}) {
-                    Text("What is the 0th prime?")
+            Button(action: {
+                
+            }) {
+                Text("What is the \(ordinal(count)) prime?")
             }
         }
         .font(.title)
