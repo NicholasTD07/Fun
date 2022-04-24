@@ -55,7 +55,7 @@ import Combine
 // class AppState: BindableObject {
 class AppState: ObservableObject {
     @Published var count: Int = 0
-    
+    @Published var savedPrimes: [Int] = []
     // in the tutorial
     // var didChange = PassthroughSubject<Void, Never>()
     
@@ -67,31 +67,90 @@ class AppState: ObservableObject {
     }
 }
 
+func isPrime(_ n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    if n <= 3 {
+        return true
+    }
+    
+    for i in 2...(Int(sqrtf(Float(n)))) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    
+    return true
+}
+
+struct IsPrimeSheetView: View {
+    @ObservedObject var state: AppState
+    
+    var body: some View {
+        
+        if isPrime(state.count) {
+            Text("\(state.count) is prime! 🎉")
+            
+            if state.savedPrimes.contains(state.count) {
+                Button {
+                    state.savedPrimes.removeAll {
+                        $0 == state.count
+                    }
+                } label: {
+                    Text("Remove from favorite primes...")
+                }
+            } else {
+                Button {
+                    state.savedPrimes.append(state.count)
+                } label: {
+                    Text("Save to favorite primes!")
+                }
+            }
+
+        } else {
+            Text("\(state.count) is not prime! 🙁")
+        }
+    }
+}
+
 struct CounterView: View {
     @ObservedObject var state: AppState
+    @State var isPrimeSheetShown: Bool = false
 
     var body: some View {
         VStack {
             HStack {
-                Button(action: { state.count -= 1 }) {
-                        Text("-")
+                Button {
+                    state.count -= 1
+                } label: {
+                    Text("-")
                 }
                 Text("\(state.count)")
-                Button(action: { state.count += 1 }) {
-                        Text("+")
+                Button {
+                    state.count += 1
+                } label: {
+                    Text("+")
                 }
             }
-            Button(action: {}) {
-                    Text("Is this prime?")
+            Button {
+                isPrimeSheetShown = true
+            } label: {
+                Text("Is this prime?")
             }
-            Button(action: {
-                
-            }) {
+            Button {
+
+            } label: {
                 Text("What is the \(ordinal(state.count)) prime?")
             }
         }
         .font(.title)
         .navigationTitle("Counter Demo")
+        .sheet(isPresented: $isPrimeSheetShown) {
+            // onDismiss
+        } content: {
+            IsPrimeSheetView(state: state)
+        }
     }
 }
 
