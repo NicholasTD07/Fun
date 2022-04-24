@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct FavoritePrimesView: View {
+    @ObservedObject var state: AppState
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(state.savedPrimes, id: \.self) { prime in
+                Text("\(prime)")
+            }
+            .onDelete { indexSet in
+                indexSet.forEach { index in
+                    // I don't think this is logically correct tho...
+                    // if you are removing multiple indices at the same time...
+                    state.savedPrimes.remove(at: index)
+                    
+                    // but so far the UI doesn't allow you to remove more than one item... okay...
+                }
+            }
+        }
+        .navigationTitle("FavoritePrimes")
     }
 }
 
 struct FavoritePrimesView_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritePrimesView()
+        FavoritePrimesView(state: AppState())
     }
 }

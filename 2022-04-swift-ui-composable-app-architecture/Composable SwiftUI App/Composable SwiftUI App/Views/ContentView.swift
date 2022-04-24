@@ -20,7 +20,7 @@ struct ContentView: View {
                 }
 
                 NavigationLink(
-                    destination: EmptyView()
+                    destination: FavoritePrimesView(state: state)
                 ) {
                     Text("Favorite Primes")
                 }
