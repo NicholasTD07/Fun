@@ -15,6 +15,12 @@
 		6CF54C882807FC5A00B92815 /* Composable_SwiftUI_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF54C872807FC5A00B92815 /* Composable_SwiftUI_AppUITests.swift */; };
 		6CF54C8A2807FC5A00B92815 /* Composable_SwiftUI_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF54C892807FC5A00B92815 /* Composable_SwiftUI_AppUITestsLaunchTests.swift */; };
 		B31266D62815187D00D46BBB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266D52815187D00D46BBB /* Keychain.swift */; };
+		B31266D82815203300D46BBB /* WolframAlphaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266D72815203300D46BBB /* WolframAlphaAPI.swift */; };
+		B31266DA2815205700D46BBB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266D92815205700D46BBB /* Helpers.swift */; };
+		B31266DD281520A200D46BBB /* IsPrimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266DC281520A200D46BBB /* IsPrimeSheetView.swift */; };
+		B31266DF281520B300D46BBB /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266DE281520B300D46BBB /* CounterView.swift */; };
+		B31266E1281520C800D46BBB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E0281520C800D46BBB /* AppState.swift */; };
+		B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E22815218B00D46BBB /* FavoritePrimesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		6CF54C892807FC5A00B92815 /* Composable_SwiftUI_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composable_SwiftUI_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B31266D3281517D800D46BBB /* Keychain.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.example.swift; sourceTree = "<group>"; };
 		B31266D52815187D00D46BBB /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		B31266D72815203300D46BBB /* WolframAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAlphaAPI.swift; sourceTree = "<group>"; };
+		B31266D92815205700D46BBB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		B31266DC281520A200D46BBB /* IsPrimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPrimeSheetView.swift; sourceTree = "<group>"; };
+		B31266DE281520B300D46BBB /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		B31266E0281520C800D46BBB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		B31266E22815218B00D46BBB /* FavoritePrimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				6CF54C6C2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift */,
-				6CF54C6E2807FC5900B92815 /* ContentView.swift */,
-				B31266D3281517D800D46BBB /* Keychain.example.swift */,
-				B31266D52815187D00D46BBB /* Keychain.swift */,
+				B31266E0281520C800D46BBB /* AppState.swift */,
+				B31266E5281521A700D46BBB /* Views */,
+				B31266DB2815207F00D46BBB /* Helpers */,
 				6CF54C702807FC5A00B92815 /* Assets.xcassets */,
 				6CF54C722807FC5A00B92815 /* Preview Content */,
 			);
@@ -130,6 +142,28 @@
 				6CF54C892807FC5A00B92815 /* Composable_SwiftUI_AppUITestsLaunchTests.swift */,
 			);
 			path = "Composable SwiftUI AppUITests";
+			sourceTree = "<group>";
+		};
+		B31266DB2815207F00D46BBB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B31266D3281517D800D46BBB /* Keychain.example.swift */,
+				B31266D52815187D00D46BBB /* Keychain.swift */,
+				B31266D92815205700D46BBB /* Helpers.swift */,
+				B31266D72815203300D46BBB /* WolframAlphaAPI.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B31266E5281521A700D46BBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CF54C6E2807FC5900B92815 /* ContentView.swift */,
+				B31266E22815218B00D46BBB /* FavoritePrimesView.swift */,
+				B31266DE281520B300D46BBB /* CounterView.swift */,
+				B31266DC281520A200D46BBB /* IsPrimeSheetView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +296,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31266D82815203300D46BBB /* WolframAlphaAPI.swift in Sources */,
 				6CF54C6F2807FC5900B92815 /* ContentView.swift in Sources */,
 				6CF54C6D2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift in Sources */,
+				B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */,
+				B31266E1281520C800D46BBB /* AppState.swift in Sources */,
+				B31266DF281520B300D46BBB /* CounterView.swift in Sources */,
+				B31266DA2815205700D46BBB /* Helpers.swift in Sources */,
+				B31266DD281520A200D46BBB /* IsPrimeSheetView.swift in Sources */,
 				B31266D62815187D00D46BBB /* Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
