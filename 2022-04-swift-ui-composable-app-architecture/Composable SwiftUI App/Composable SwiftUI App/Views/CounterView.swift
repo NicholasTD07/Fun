@@ -9,9 +9,12 @@ import SwiftUI
 
 struct CounterView: View {
     @ObservedObject var state: AppState
-    @State var isPrimeSheetShown: Bool = false
-    @State var nthPrimeAlertShown: Bool = false
+    
     @State var nthPrime: Int?
+
+    @State var isPrimeSheetShown = false
+    @State var nthPrimeAlertShown = false
+    @State var isNthPrimeDisabled = false
 
     var body: some View {
         VStack {
@@ -34,6 +37,7 @@ struct CounterView: View {
                 Text("Is this prime?")
             }
             Button {
+                isNthPrimeDisabled = true
                 Composable_SwiftUI_App.nthPrime(state.count) { optionalPrime in
                     guard let prime = optionalPrime else {
                         return
@@ -43,10 +47,12 @@ struct CounterView: View {
                     
                     nthPrime = prime
                     nthPrimeAlertShown = true
+                    isNthPrimeDisabled = false
                 }
             } label: {
                 Text("What is the \(ordinal(state.count)) prime?")
             }
+            .disabled(isNthPrimeDisabled)
         }
         .font(.title)
         .navigationTitle("Counter Demo")
@@ -63,5 +69,11 @@ struct CounterView: View {
             Text("The \(ordinal(state.count)) prime is \(nthPrime ?? 0)")
         }
 
+    }
+}
+
+struct CounterView_Previews: PreviewProvider {
+    static var previews: some View {
+        CounterView(state: AppState())
     }
 }

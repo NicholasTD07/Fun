@@ -11,7 +11,6 @@ struct IsPrimeSheetView: View {
     @ObservedObject var state: AppState
     
     var body: some View {
-        
         if isPrime(state.count) {
             Text("\(state.count) is prime! 🎉")
             
@@ -34,5 +33,11 @@ struct IsPrimeSheetView: View {
         } else {
             Text("\(state.count) is not prime! 🙁")
         }
+    }
+}
+
+struct IsPrimeSheetView_Previews: PreviewProvider {
+    static var previews: some View {
+        IsPrimeSheetView(state: AppState())
     }
 }
