@@ -38,8 +38,8 @@ struct AppState {
     var activityFeed: [Activity] = []
     
     struct Activity {
+        let timestamp: Date
         let type: ActivityType
-        let timestamp = Date()
         
         enum ActivityType {
             case addedFavoritePrime(Int)
@@ -59,11 +59,69 @@ enum CounterAction {
     case incrTapped
 }
 
+enum PrimeModalAction {
+    case saveFavoritePrimeTapped
+    case removeFavoritePrimeTapped
+}
+
+enum FavoritePrimesAction {
+    case deleteFavoritePrimes(IndexSet)
+}
+
+enum AppAction {
+    case counter(CounterAction)
+    case primeModal(PrimeModalAction)
+    case favoritePrimes(FavoritePrimesAction)
+}
+
 func counterReducer(state: inout AppState, action: CounterAction) {
     switch action {
     case .decrTapped:
         state.count -= 1
     case .incrTapped:
         state.count += 1
+    }
+    
+}
+
+func appReducer(value: inout AppState, action: AppAction) -> Void {
+    switch action {
+    case .counter(.decrTapped):
+        value.count -= 1
+    case .counter(.incrTapped):
+        value.count += 1
+    case .primeModal(.saveFavoritePrimeTapped):
+        value.savedPrimes.append(value.count)
+
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .addedFavoritePrime(value.count)
+            )
+        )
+    case .primeModal(.removeFavoritePrimeTapped):
+        value.savedPrimes.removeAll {
+            $0 == value.count
+        }
+
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .removedFavoritePrime(value.count)
+            )
+        )
+    case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
+        for index in indexSet {
+            let prime = value.savedPrimes[index]
+
+            value.savedPrimes.remove(at: index)
+
+            value.activityFeed.append(
+                .init(
+                    timestamp: Date(),
+                    type: .removedFavoritePrime(prime)
+                )
+            )
+        }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var store = Store(
         initialValue: AppState(),
-        reducer: counterReducer
+        reducer: appReducer
     )
     
     var body: some View {
@@ -41,7 +41,7 @@ struct ContentView_Previews: PreviewProvider {
             store:
                 Store(
                     initialValue: AppState(),
-                    reducer: counterReducer
+                    reducer: appReducer
                 )
         )
     }

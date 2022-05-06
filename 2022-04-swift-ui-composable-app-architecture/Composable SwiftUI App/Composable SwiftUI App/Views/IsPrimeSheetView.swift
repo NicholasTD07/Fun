@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IsPrimeSheetView: View {
-    @ObservedObject var store: Store<AppState, CounterAction>
+    @ObservedObject var store: Store<AppState, AppAction>
 
     var body: some View {
         if isPrime(store.value.count) {
@@ -16,15 +16,21 @@ struct IsPrimeSheetView: View {
             
             if store.value.savedPrimes.contains(store.value.count) {
                 Button {
-                    store.value.savedPrimes.removeAll {
-                        $0 == store.value.count
-                    }
+                    store.send(
+                        action: .primeModal(
+                            .removeFavoritePrimeTapped
+                        )
+                    )
                 } label: {
                     Text("Remove from favorite primes...")
                 }
             } else {
                 Button {
-                    store.value.savedPrimes.append(store.value.count)
+                    store.send(
+                        action: .primeModal(
+                            .saveFavoritePrimeTapped
+                        )
+                    )
                 } label: {
                     Text("Save to favorite primes!")
                 }
@@ -42,7 +48,7 @@ struct IsPrimeSheetView_Previews: PreviewProvider {
             store:
                 Store(
                     initialValue: AppState(),
-                    reducer: counterReducer
+                    reducer: appReducer
                 )
         )
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CounterView: View {
-    @ObservedObject var store: Store<AppState, CounterAction>
+    @ObservedObject var store: Store<AppState, AppAction>
 
     @State var nthPrime: Int?
 
@@ -20,13 +20,13 @@ struct CounterView: View {
         VStack {
             HStack {
                 Button {
-                    store.value.count -= 1
+                    store.send(action: .counter(.decrTapped))
                 } label: {
                     Text("-")
                 }
                 Text("\(store.value.count)")
                 Button {
-                    store.value.count += 1
+                    store.send(action: .counter(.incrTapped))
                 } label: {
                     Text("+")
                 }
@@ -78,7 +78,7 @@ struct CounterView_Previews: PreviewProvider {
             store:
                 Store(
                     initialValue: AppState(),
-                    reducer: counterReducer
+                    reducer: appReducer
                 )
         )
     }
