@@ -8,36 +8,42 @@
 import SwiftUI
 
 struct IsPrimeSheetView: View {
-    @ObservedObject var state: AppState
-    
+    @ObservedObject var store: Store<AppState, CounterAction>
+
     var body: some View {
-        if isPrime(state.count) {
-            Text("\(state.count) is prime! 🎉")
+        if isPrime(store.value.count) {
+            Text("\(store.value.count) is prime! 🎉")
             
-            if state.savedPrimes.contains(state.count) {
+            if store.value.savedPrimes.contains(store.value.count) {
                 Button {
-                    state.savedPrimes.removeAll {
-                        $0 == state.count
+                    store.value.savedPrimes.removeAll {
+                        $0 == store.value.count
                     }
                 } label: {
                     Text("Remove from favorite primes...")
                 }
             } else {
                 Button {
-                    state.savedPrimes.append(state.count)
+                    store.value.savedPrimes.append(store.value.count)
                 } label: {
                     Text("Save to favorite primes!")
                 }
             }
 
         } else {
-            Text("\(state.count) is not prime! 🙁")
+            Text("\(store.value.count) is not prime! 🙁")
         }
     }
 }
 
 struct IsPrimeSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        IsPrimeSheetView(state: AppState())
+        IsPrimeSheetView(
+            store:
+                Store(
+                    initialValue: AppState(),
+                    reducer: counterReducer
+                )
+        )
     }
 }

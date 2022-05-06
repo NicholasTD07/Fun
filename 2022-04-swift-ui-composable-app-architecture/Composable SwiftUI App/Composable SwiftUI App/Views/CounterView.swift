@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CounterView: View {
-    @ObservedObject var state: AppState
-    
+    @ObservedObject var store: Store<AppState, CounterAction>
+
     @State var nthPrime: Int?
 
     @State var isPrimeSheetShown = false
@@ -20,13 +20,13 @@ struct CounterView: View {
         VStack {
             HStack {
                 Button {
-                    state.count -= 1
+                    store.value.count -= 1
                 } label: {
                     Text("-")
                 }
-                Text("\(state.count)")
+                Text("\(store.value.count)")
                 Button {
-                    state.count += 1
+                    store.value.count += 1
                 } label: {
                     Text("+")
                 }
@@ -38,7 +38,7 @@ struct CounterView: View {
             }
             Button {
                 isNthPrimeDisabled = true
-                Composable_SwiftUI_App.nthPrime(state.count) { optionalPrime in
+                Composable_SwiftUI_App.nthPrime(store.value.count) { optionalPrime in
                     guard let prime = optionalPrime else {
                         return
                     }
@@ -50,7 +50,7 @@ struct CounterView: View {
                     isNthPrimeDisabled = false
                 }
             } label: {
-                Text("What is the \(ordinal(state.count)) prime?")
+                Text("What is the \(ordinal(store.value.count)) prime?")
             }
             .disabled(isNthPrimeDisabled)
         }
@@ -59,14 +59,14 @@ struct CounterView: View {
         .sheet(isPresented: $isPrimeSheetShown) {
             // onDismiss
         } content: {
-            IsPrimeSheetView(state: state)
+            IsPrimeSheetView(store: store)
         }
         .alert("nth Prime", isPresented: $nthPrimeAlertShown) {
             Text("Ok")
         } message: {
             // the Text below gets build even before the alert is shown
             // can't have nthPrime! otherwise... crashes...
-            Text("The \(ordinal(state.count)) prime is \(nthPrime ?? 0)")
+            Text("The \(ordinal(store.value.count)) prime is \(nthPrime ?? 0)")
         }
 
     }
@@ -74,6 +74,12 @@ struct CounterView: View {
 
 struct CounterView_Previews: PreviewProvider {
     static var previews: some View {
-        CounterView(state: AppState())
+        CounterView(
+            store:
+                Store(
+                    initialValue: AppState(),
+                    reducer: counterReducer
+                )
+        )
     }
 }
