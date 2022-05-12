@@ -62,29 +62,12 @@ func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
 }
 
 // States
-struct FavoritePrimesState {
-    var favoritePrimes: [Int]
-    var activityFeed: [AppState.Activity]
-}
 
 struct AppState {
     var count = 0
     var savedPrimes: [Int] = []
     var loggedInUser: User? = nil
     var activityFeed: [Activity] = []
-    
-    var favoritePrimesState: FavoritePrimesState {
-        get {
-            return FavoritePrimesState(
-                favoritePrimes: savedPrimes,
-                activityFeed: activityFeed
-            )
-        }
-        set {
-            savedPrimes = newValue.favoritePrimes
-            activityFeed = newValue.activityFeed
-        }
-    }
         
     struct Activity {
         let timestamp: Date
@@ -177,11 +160,11 @@ func actionLocalPrimeModalReducer(value: inout AppState, action: PrimeModalActio
     }
 }
 
-func completeLocalFavoritePrimesReducer(value: inout FavoritePrimesState, action: FavoritePrimesAction) {
+func completeLocalFavoritePrimesReducer(value: inout [Int], action: FavoritePrimesAction) {
     switch action {
     case .deleteFavoritePrimes(let indexSet):
         for index in indexSet {
-            value.favoritePrimes.remove(at: index)
+            value.remove(at: index)
         }
     }
 }
@@ -198,7 +181,7 @@ let primeModalReducer = pullback(
 )
 let favoritePrimeReducer = pullback(
     reducer: completeLocalFavoritePrimesReducer(value:action:),
-    valueKeyPath: \AppState.favoritePrimesState,
+    valueKeyPath: \AppState.savedPrimes,
     actionKeyPath: \AppAction.favoritePrimes
 )
 
