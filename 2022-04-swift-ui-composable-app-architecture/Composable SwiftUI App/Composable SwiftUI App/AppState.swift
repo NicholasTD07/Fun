@@ -32,16 +32,7 @@ final class Store<Value, Action>: ObservableObject {
     }
 }
 
-func combine<Value, Action>(
-  _ first: @escaping (inout Value, Action) -> Void,
-  _ second: @escaping (inout Value, Action) -> Void
-) -> (inout Value, Action) -> Void {
-    { value, action in
-        first(&value, action)
-        second(&value, action)
-    }
-}
-
+// combine
 func combine<Value, Action>(
   reducers: [(inout Value, Action) -> Void]
 ) -> (inout Value, Action) -> Void {
@@ -52,123 +43,27 @@ func combine<Value, Action>(
     }
 }
 
-func pullback<LocalValue, GlobalValue, Action> (
-    reducer: @escaping (inout LocalValue, Action) -> Void,
-    get: @escaping (GlobalValue) -> LocalValue,
-    set: @escaping (inout GlobalValue, LocalValue) -> Void
-) -> (inout GlobalValue, Action) -> Void {
-    { globalValue, action in
-        var localValue = get(globalValue)
-        
-        reducer(&localValue, action)
-        
-        set(&globalValue, localValue)
-    }
-}
-
-// pullback but with immutable reducers
-//func pullback<LocalValue, GlobalValue, Action> (
-//    reducer: @escaping (LocalValue, Action) -> LocalValue,
-//    get: @escaping (GlobalValue) -> LocalValue,
-//    set: @escaping (inout GlobalValue, LocalValue) -> Void
-//) -> (inout GlobalValue, Action) -> Void {
-//    { globalValue, action in
-//        let localValue = get(globalValue)
-//
-//        let updated = reducer(localValue, action)
-//
-//        set(&globalValue, updated)
-//    }
-//}
-
-func counterReducer(value: inout Int, action: AppAction) {
-    switch action {
-    case .counter(let counterAction):
-        switch counterAction {
-        case .decrTapped:
-            return value -= 1
-        case .incrTapped:
-            return value += 1
+// pullback
+func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
+    reducer: @escaping (inout LocalValue, LocalAction) -> Void,
+    valueKeyPath: WritableKeyPath<GlobalValue, LocalValue>,
+    actionKeyPath: KeyPath<GlobalAction, LocalAction?>
+) -> (inout GlobalValue, GlobalAction) -> Void {
+    { (globalValue, globalAction) in
+        guard
+            let localAction = globalAction[keyPath: actionKeyPath]
+        else {
+            return
         }
-    case .primeModal:
-        break
-    case .favoritePrimes:
-        break
+        
+        reducer(&globalValue[keyPath: valueKeyPath], localAction)
     }
 }
 
-
-func pullback<LocalValue, GlobalValue, Action> (
-    reducer: @escaping (inout LocalValue, Action) -> Void,
-    keyPath: WritableKeyPath<GlobalValue, LocalValue>
-) -> (inout GlobalValue, Action) -> Void {
-    { (globalValue, action) in
-        reducer(&globalValue[keyPath: keyPath], action)
-    }
-}
-
-func test() {
-    let reducer = pullback(
-        reducer: counterReducer(value:action:),
-        get: { (state: AppState) in state.count },
-        set: { (state: inout AppState, value: Int) in state.count = value }
-    )
-    
-    let keyPath = \AppState.count
-    let states: [AppState] = []
-    let mappedCount = states.map(\.count)
-    
-    let anotherReducer = pullback(
-        reducer: counterReducer(value:action:),
-        keyPath: keyPath
-    )
-    
-    let combined = combine(reducers: [reducer])
-}
-
+// States
 struct FavoritePrimesState {
     var favoritePrimes: [Int]
     var activityFeed: [AppState.Activity]
-}
-
-func favoritePrimesReducer(value: inout FavoritePrimesState, action: AppAction) {
-    switch action {
-    case .counter(let counterAction):
-        break
-    case .primeModal:
-        break
-    case .favoritePrimes(let favoritePrimeAction):
-        switch favoritePrimeAction {
-        case .deleteFavoritePrimes(let indexSet):
-            
-            for index in indexSet {
-                let activity = AppState.Activity(
-                    timestamp: Date(),
-                    type: .removedFavoritePrime(
-                        value.favoritePrimes[index]
-                    )
-                )
-
-                value.activityFeed.append(activity)
-                value.favoritePrimes.remove(at: index)
-            }
-        }
-    }
-}
-
-func moreTest() {
-    let reducers = [
-        pullback(
-            reducer: counterReducer(value:action:),
-            keyPath: \AppState.count
-        ),
-        pullback(
-            reducer: favoritePrimesReducer(value:action:),
-            keyPath: \AppState.favoritePrimesState
-        )
-    ]
-    
-    let combined = combine(reducers: reducers)
 }
 
 struct AppState {
@@ -206,6 +101,8 @@ struct AppState {
         let bio: String
     }
 }
+
+// Actions
 
 enum CounterAction {
     case decrTapped
@@ -257,14 +154,7 @@ enum AppAction {
     }
 }
 
-func counterReducer(state: inout AppState, action: CounterAction) {
-    switch action {
-    case .decrTapped:
-        state.count -= 1
-    case .incrTapped:
-        state.count += 1
-    }
-}
+// Reducers
 
 func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
     switch action {
@@ -272,6 +162,31 @@ func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
         value -= 1
     case .incrTapped:
         value += 1
+    }
+}
+
+func actionLocalPrimeModalReducer(value: inout AppState, action: PrimeModalAction) {
+    switch action {
+    case .saveFavoritePrimeTapped:
+        value.savedPrimes.append(value.count)
+
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .addedFavoritePrime(value.count)
+            )
+        )
+    case .removeFavoritePrimeTapped:
+        value.savedPrimes.removeAll {
+            $0 == value.count
+        }
+
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .removedFavoritePrime(value.count)
+            )
+        )
     }
 }
 
@@ -292,56 +207,15 @@ func completeLocalFavoritePrimesReducer(value: inout FavoritePrimesState, action
     }
 }
 
-func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
-    reducer: @escaping (inout LocalValue, LocalAction) -> Void,
-    valueKeyPath: WritableKeyPath<GlobalValue, LocalValue>,
-    actionKeyPath: KeyPath<GlobalAction, LocalAction?>
-) -> (inout GlobalValue, GlobalAction) -> Void {
-    { (globalValue, globalAction) in
-        guard
-            let localAction = globalAction[keyPath: actionKeyPath]
-        else {
-            return
-        }
-        
-        reducer(&globalValue[keyPath: valueKeyPath], localAction)
-    }
-}
-
-func primeModalReducer(value: inout AppState, action: AppAction) -> Void {
-    switch action {
-    case .counter:
-        break
-    case .primeModal(.saveFavoritePrimeTapped):
-        value.savedPrimes.append(value.count)
-        
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .addedFavoritePrime(value.count)
-            )
-        )
-    case .primeModal(.removeFavoritePrimeTapped):
-        value.savedPrimes.removeAll {
-            $0 == value.count
-        }
-        
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .removedFavoritePrime(value.count)
-            )
-        )
-    case .favoritePrimes:
-        break
-    }
-}
-
-
 let counterReducerV3 = pullback(
     reducer: completeLocalCounterReducer(value:action:),
     valueKeyPath: \AppState.count,
     actionKeyPath: \AppAction.counterAction
+)
+let primeModalReducer = pullback(
+    reducer: actionLocalPrimeModalReducer(value:action:),
+    valueKeyPath: \AppState.self,
+    actionKeyPath: \AppAction.primeModalAction
 )
 let favoritePrimeReducer = pullback(
     reducer: completeLocalFavoritePrimesReducer(value:action:),
@@ -352,49 +226,7 @@ let favoritePrimeReducer = pullback(
 let appReducer = combine(
     reducers: [
         counterReducerV3,
-        primeModalReducer(value:action:),
+        primeModalReducer,
         favoritePrimeReducer,
     ]
 )
-
-func appReducerOriginal(value: inout AppState, action: AppAction) -> Void {
-    switch action {
-    case .counter(.decrTapped):
-        value.count -= 1
-    case .counter(.incrTapped):
-        value.count += 1
-    case .primeModal(.saveFavoritePrimeTapped):
-        value.savedPrimes.append(value.count)
-
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .addedFavoritePrime(value.count)
-            )
-        )
-    case .primeModal(.removeFavoritePrimeTapped):
-        value.savedPrimes.removeAll {
-            $0 == value.count
-        }
-
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .removedFavoritePrime(value.count)
-            )
-        )
-    case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
-        for index in indexSet {
-            let prime = value.savedPrimes[index]
-
-            value.savedPrimes.remove(at: index)
-
-            value.activityFeed.append(
-                .init(
-                    timestamp: Date(),
-                    type: .removedFavoritePrime(prime)
-                )
-            )
-        }
-    }
-}

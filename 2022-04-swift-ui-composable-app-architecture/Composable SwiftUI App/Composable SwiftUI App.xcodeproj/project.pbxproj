@@ -51,6 +51,7 @@
 		6CF54C832807FC5A00B92815 /* Composable SwiftUI AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Composable SwiftUI AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF54C872807FC5A00B92815 /* Composable_SwiftUI_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composable_SwiftUI_AppUITests.swift; sourceTree = "<group>"; };
 		6CF54C892807FC5A00B92815 /* Composable_SwiftUI_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composable_SwiftUI_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6CFE24A3282CDE3E003F6468 /* Unused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unused.swift; sourceTree = "<group>"; };
 		B31266D3281517D800D46BBB /* Keychain.example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.example.swift; sourceTree = "<group>"; };
 		B31266D52815187D00D46BBB /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		B31266D72815203300D46BBB /* WolframAlphaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WolframAlphaAPI.swift; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 			children = (
 				6CF54C6C2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift */,
 				B31266E0281520C800D46BBB /* AppState.swift */,
+				6CFE24A3282CDE3E003F6468 /* Unused.swift */,
 				B31266E5281521A700D46BBB /* Views */,
 				B31266DB2815207F00D46BBB /* Helpers */,
 				6CF54C702807FC5A00B92815 /* Assets.xcassets */,
