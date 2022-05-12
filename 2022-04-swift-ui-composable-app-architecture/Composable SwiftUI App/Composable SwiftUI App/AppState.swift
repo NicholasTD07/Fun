@@ -7,6 +7,7 @@
 
 import Foundation
 import FileProvider
+import SwiftUI
 
 /*
  
@@ -169,24 +170,10 @@ func actionLocalPrimeModalReducer(value: inout AppState, action: PrimeModalActio
     switch action {
     case .saveFavoritePrimeTapped:
         value.savedPrimes.append(value.count)
-
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .addedFavoritePrime(value.count)
-            )
-        )
     case .removeFavoritePrimeTapped:
         value.savedPrimes.removeAll {
             $0 == value.count
         }
-
-        value.activityFeed.append(
-            .init(
-                timestamp: Date(),
-                type: .removedFavoritePrime(value.count)
-            )
-        )
     }
 }
 
@@ -194,14 +181,6 @@ func completeLocalFavoritePrimesReducer(value: inout FavoritePrimesState, action
     switch action {
     case .deleteFavoritePrimes(let indexSet):
         for index in indexSet {
-            let activity = AppState.Activity(
-                timestamp: Date(),
-                type: .removedFavoritePrime(
-                    value.favoritePrimes[index]
-                )
-            )
-            
-            value.activityFeed.append(activity)
             value.favoritePrimes.remove(at: index)
         }
     }
@@ -223,10 +202,43 @@ let favoritePrimeReducer = pullback(
     actionKeyPath: \AppAction.favoritePrimes
 )
 
-let appReducer = combine(
+// higher order reducers AKA wrappers?
+
+func activityFeed(
+    _ reducer: @escaping (inout AppState, AppAction) -> Void
+) -> (inout AppState, AppAction) -> Void {
+    return { value, action in
+        switch action {
+        case .counter:
+            break
+            
+        case .primeModal(.removeFavoritePrimeTapped):
+            value.activityFeed.append(
+                .init(timestamp: Date(), type: .removedFavoritePrime(value.count))
+            )
+            
+        case .primeModal(.saveFavoritePrimeTapped):
+            value.activityFeed.append(
+                .init(timestamp: Date(), type: .addedFavoritePrime(value.count))
+            )
+            
+        case let .favoritePrimes(.deleteFavoritePrimes(indexSet)):
+            for index in indexSet {
+                value.activityFeed.append(
+                    .init(timestamp: Date(), type: .removedFavoritePrime(value.savedPrimes[index]))
+                )
+            }
+        }
+        
+        reducer(&value, action)
+    }
+}
+
+let combined = combine(
     reducers: [
         counterReducerV3,
         primeModalReducer,
         favoritePrimeReducer,
     ]
 )
+let appReducer = activityFeed(combined)
