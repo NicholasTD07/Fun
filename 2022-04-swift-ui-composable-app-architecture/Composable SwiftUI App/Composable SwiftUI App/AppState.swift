@@ -185,7 +185,7 @@ struct AppState {
             )
         }
         set {
-            savedPrimes = newValue.activityFeed
+            savedPrimes = newValue.favoritePrimes
             activityFeed = newValue.activityFeed
         }
     }
@@ -225,6 +225,36 @@ enum AppAction {
     case counter(CounterAction)
     case primeModal(PrimeModalAction)
     case favoritePrimes(FavoritePrimesAction)
+    
+    var counterAction: CounterAction? {
+        guard
+            case let .counter(action) = self
+        else {
+            return nil
+        }
+        
+        return action
+    }
+    
+    var primeModalAction: PrimeModalAction? {
+        guard
+            case let .primeModal(action) = self
+        else {
+            return nil
+        }
+        
+        return action
+    }
+    
+    var favoritePrimes: FavoritePrimesAction? {
+        guard
+            case let .favoritePrimes(action) = self
+        else {
+            return nil
+        }
+        
+        return action
+    }
 }
 
 func counterReducer(state: inout AppState, action: CounterAction) {
@@ -234,10 +264,100 @@ func counterReducer(state: inout AppState, action: CounterAction) {
     case .incrTapped:
         state.count += 1
     }
-    
 }
 
-func appReducer(value: inout AppState, action: AppAction) -> Void {
+func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
+    switch action {
+    case .decrTapped:
+        value -= 1
+    case .incrTapped:
+        value += 1
+    }
+}
+
+func completeLocalFavoritePrimesReducer(value: inout FavoritePrimesState, action: FavoritePrimesAction) {
+    switch action {
+    case .deleteFavoritePrimes(let indexSet):
+        for index in indexSet {
+            let activity = AppState.Activity(
+                timestamp: Date(),
+                type: .removedFavoritePrime(
+                    value.favoritePrimes[index]
+                )
+            )
+            
+            value.activityFeed.append(activity)
+            value.favoritePrimes.remove(at: index)
+        }
+    }
+}
+
+func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
+    reducer: @escaping (inout LocalValue, LocalAction) -> Void,
+    valueKeyPath: WritableKeyPath<GlobalValue, LocalValue>,
+    actionKeyPath: KeyPath<GlobalAction, LocalAction?>
+) -> (inout GlobalValue, GlobalAction) -> Void {
+    { (globalValue, globalAction) in
+        guard
+            let localAction = globalAction[keyPath: actionKeyPath]
+        else {
+            return
+        }
+        
+        reducer(&globalValue[keyPath: valueKeyPath], localAction)
+    }
+}
+
+func primeModalReducer(value: inout AppState, action: AppAction) -> Void {
+    switch action {
+    case .counter:
+        break
+    case .primeModal(.saveFavoritePrimeTapped):
+        value.savedPrimes.append(value.count)
+        
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .addedFavoritePrime(value.count)
+            )
+        )
+    case .primeModal(.removeFavoritePrimeTapped):
+        value.savedPrimes.removeAll {
+            $0 == value.count
+        }
+        
+        value.activityFeed.append(
+            .init(
+                timestamp: Date(),
+                type: .removedFavoritePrime(value.count)
+            )
+        )
+    case .favoritePrimes:
+        break
+    }
+}
+
+
+let counterReducerV3 = pullback(
+    reducer: completeLocalCounterReducer(value:action:),
+    valueKeyPath: \AppState.count,
+    actionKeyPath: \AppAction.counterAction
+)
+let favoritePrimeReducer = pullback(
+    reducer: completeLocalFavoritePrimesReducer(value:action:),
+    valueKeyPath: \AppState.favoritePrimesState,
+    actionKeyPath: \AppAction.favoritePrimes
+)
+
+let appReducer = combine(
+    reducers: [
+        counterReducerV3,
+        primeModalReducer(value:action:),
+        favoritePrimeReducer,
+    ]
+)
+
+func appReducerOriginal(value: inout AppState, action: AppAction) -> Void {
     switch action {
     case .counter(.decrTapped):
         value.count -= 1
