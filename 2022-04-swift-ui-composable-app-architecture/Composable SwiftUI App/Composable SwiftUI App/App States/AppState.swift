@@ -7,7 +7,9 @@
 
 import Foundation
 
+import Counter
 import FavoritePrimes
+import PrimeModal
 
 // States
 
@@ -16,7 +18,17 @@ struct AppState {
     var savedPrimes: [Int] = []
     var loggedInUser: User? = nil
     var activityFeed: [Activity] = []
-        
+    
+    var primeModal: PrimeModalState {
+        get {
+            .init(count: count, savedPrimes: savedPrimes)
+        }
+        set {
+            count = newValue.count
+            savedPrimes = newValue.savedPrimes
+        }
+    }
+    
     struct Activity {
         let timestamp: Date
         let type: ActivityType
@@ -35,17 +47,6 @@ struct AppState {
 }
 
 // Actions
-
-enum CounterAction {
-    case decrTapped
-    case incrTapped
-}
-
-enum PrimeModalAction {
-    case saveFavoritePrimeTapped
-    case removeFavoritePrimeTapped
-}
-
 
 enum AppAction {
     case counter(CounterAction)

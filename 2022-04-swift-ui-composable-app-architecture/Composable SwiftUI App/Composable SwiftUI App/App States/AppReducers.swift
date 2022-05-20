@@ -8,29 +8,11 @@
 import Foundation
 import ComposableArchitecture
 
+import Counter
 import FavoritePrimes
+import PrimeModal
 
 // Reducers
-
-func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
-    switch action {
-    case .decrTapped:
-        value -= 1
-    case .incrTapped:
-        value += 1
-    }
-}
-
-func actionLocalPrimeModalReducer(value: inout AppState, action: PrimeModalAction) {
-    switch action {
-    case .saveFavoritePrimeTapped:
-        value.savedPrimes.append(value.count)
-    case .removeFavoritePrimeTapped:
-        value.savedPrimes.removeAll {
-            $0 == value.count
-        }
-    }
-}
 
 let counterReducerV3 = ReducerTypeBox.pullback(
     reducer: completeLocalCounterReducer(value:action:),
@@ -39,7 +21,7 @@ let counterReducerV3 = ReducerTypeBox.pullback(
 )
 let primeModalReducer = ReducerTypeBox.pullback(
     reducer: actionLocalPrimeModalReducer(value:action:),
-    writableValueKeyPath: \AppState.self,
+    writableValueKeyPath: \AppState.primeModal,
     readableActionKeyPath: \AppAction.primeModalAction
 )
 let favoritePrimeReducer = ReducerTypeBox.pullback(

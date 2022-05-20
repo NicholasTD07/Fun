@@ -49,6 +49,8 @@
 		B3F25BC02837892500512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
 		B3F25BC12837892500512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
 		B3F25BC3283789B600512A08 /* FavoritePrimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BC2283789B600512A08 /* FavoritePrimes.swift */; };
+		B3F25BC528378A6700512A08 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BC428378A6700512A08 /* Counter.swift */; };
+		B3F25BC728378AAB00512A08 /* PrimeModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BC628378AAB00512A08 /* PrimeModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +215,8 @@
 		B3F25BAC2837890A00512A08 /* ComposableArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F25BB32837890A00512A08 /* ComposableArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitectureTests.swift; sourceTree = "<group>"; };
 		B3F25BC2283789B600512A08 /* FavoritePrimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimes.swift; sourceTree = "<group>"; };
+		B3F25BC428378A6700512A08 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		B3F25BC628378AAB00512A08 /* PrimeModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				B3F25B3E2837888200512A08 /* Counter.h */,
+				B3F25BC428378A6700512A08 /* Counter.swift */,
 				B3F25B3F2837888200512A08 /* Counter.docc */,
 			);
 			path = Counter;
@@ -430,6 +435,7 @@
 		B3F25B60283788CA00512A08 /* PrimeModal */ = {
 			isa = PBXGroup;
 			children = (
+				B3F25BC628378AAB00512A08 /* PrimeModal.swift */,
 				B3F25B61283788CA00512A08 /* PrimeModal.h */,
 				B3F25B62283788CA00512A08 /* PrimeModal.docc */,
 			);
@@ -925,6 +931,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F25BC528378A6700512A08 /* Counter.swift in Sources */,
 				B3F25B402837888200512A08 /* Counter.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -942,6 +949,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F25B63283788CA00512A08 /* PrimeModal.docc in Sources */,
+				B3F25BC728378AAB00512A08 /* PrimeModal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
