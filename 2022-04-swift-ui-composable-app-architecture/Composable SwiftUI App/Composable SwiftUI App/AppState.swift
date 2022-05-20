@@ -33,34 +33,6 @@ final class Store<Value, Action>: ObservableObject {
     }
 }
 
-// combine
-func combine<Value, Action>(
-  reducers: [(inout Value, Action) -> Void]
-) -> (inout Value, Action) -> Void {
-    { value, action in
-        reducers.forEach { reducer in
-            reducer(&value, action)
-        }
-    }
-}
-
-// pullback
-func pullback<GlobalValue, LocalValue, GlobalAction, LocalAction>(
-    reducer: @escaping (inout LocalValue, LocalAction) -> Void,
-    valueKeyPath: WritableKeyPath<GlobalValue, LocalValue>,
-    actionKeyPath: KeyPath<GlobalAction, LocalAction?>
-) -> (inout GlobalValue, GlobalAction) -> Void {
-    { (globalValue, globalAction) in
-        guard
-            let localAction = globalAction[keyPath: actionKeyPath]
-        else {
-            return
-        }
-        
-        reducer(&globalValue[keyPath: valueKeyPath], localAction)
-    }
-}
-
 // States
 
 struct AppState {
@@ -169,28 +141,71 @@ func completeLocalFavoritePrimesReducer(value: inout [Int], action: FavoritePrim
     }
 }
 
-let counterReducerV3 = pullback(
+enum ReducerTypeBox<Value, Action> {
+    typealias Reducer = (inout Value, Action) -> Void
+    typealias HigherOrderReducer = (@escaping Reducer) -> Reducer
+    
+    static func wrapping(
+        reducer: @escaping Reducer,
+        with higherOrderReducers: [HigherOrderReducer]
+    ) -> Reducer {
+        let wrapped = higherOrderReducers.reduce(reducer) { (reducer, higherOrderReducer) -> Reducer in
+            higherOrderReducer(reducer)
+        }
+        
+        return wrapped
+    }
+
+    static func combine(
+      reducers: [(inout Value, Action) -> Void]
+    ) -> (inout Value, Action) -> Void {
+        { value, action in
+            reducers.forEach { reducer in
+                reducer(&value, action)
+            }
+        }
+    }
+    
+    static func pullback<LocalValue, LocalAction>(
+        reducer: @escaping (inout LocalValue, LocalAction) -> Void,
+        writableValueKeyPath: WritableKeyPath<Value, LocalValue>,
+        readableActionKeyPath: KeyPath<Action, LocalAction?>
+    ) -> (inout Value, Action) -> Void {
+        { (globalValue, globalAction) in
+            guard
+                let localAction = globalAction[keyPath: readableActionKeyPath]
+            else {
+                return
+            }
+            
+            reducer(&globalValue[keyPath: writableValueKeyPath], localAction)
+        }
+    }
+}
+
+
+let counterReducerV3 = ReducerTypeBox.pullback(
     reducer: completeLocalCounterReducer(value:action:),
-    valueKeyPath: \AppState.count,
-    actionKeyPath: \AppAction.counterAction
+    writableValueKeyPath: \AppState.count,
+    readableActionKeyPath: \AppAction.counterAction
 )
-let primeModalReducer = pullback(
+let primeModalReducer = ReducerTypeBox.pullback(
     reducer: actionLocalPrimeModalReducer(value:action:),
-    valueKeyPath: \AppState.self,
-    actionKeyPath: \AppAction.primeModalAction
+    writableValueKeyPath: \AppState.self,
+    readableActionKeyPath: \AppAction.primeModalAction
 )
-let favoritePrimeReducer = pullback(
+let favoritePrimeReducer = ReducerTypeBox.pullback(
     reducer: completeLocalFavoritePrimesReducer(value:action:),
-    valueKeyPath: \AppState.savedPrimes,
-    actionKeyPath: \AppAction.favoritePrimes
+    writableValueKeyPath: \AppState.savedPrimes,
+    readableActionKeyPath: \AppAction.favoritePrimes
 )
 
 // higher order reducers AKA wrappers?
 
 func activityFeed(
-    _ reducer: @escaping (inout AppState, AppAction) -> Void
+    wrapping reducer: @escaping (inout AppState, AppAction) -> Void
 ) -> (inout AppState, AppAction) -> Void {
-    return { value, action in
+    { value, action in
         switch action {
         case .counter:
             break
@@ -217,11 +232,34 @@ func activityFeed(
     }
 }
 
-let combined = combine(
+func logging<Value, Action>(
+    wrapping reducer: @escaping (inout Value, Action) -> Void
+) -> (inout Value, Action) -> Void {
+    { value, action in
+        print("Before Action, State:")
+        dump(value)
+        print("Action: \(action)")
+        
+        reducer(&value, action)
+        
+        print("After Action, State:")
+        dump(value)
+        print("---")
+    }
+}
+
+let combined = ReducerTypeBox.combine(
     reducers: [
         counterReducerV3,
         primeModalReducer,
         favoritePrimeReducer,
     ]
 )
-let appReducer = activityFeed(combined)
+
+let appReducer = ReducerTypeBox<AppState, AppAction>.wrapping(
+    reducer: combined,
+    with: [
+        logging(wrapping:),
+        activityFeed(wrapping:),
+    ]
+)
