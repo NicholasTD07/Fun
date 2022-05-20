@@ -21,8 +21,6 @@
 		B31266DF281520B300D46BBB /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266DE281520B300D46BBB /* CounterView.swift */; };
 		B31266E1281520C800D46BBB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E0281520C800D46BBB /* AppState.swift */; };
 		B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E22815218B00D46BBB /* FavoritePrimesView.swift */; };
-		B3F25B322837866E00512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
-		B3F25B342837868800512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
 		B3F25B36283786B400512A08 /* AppReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B35283786B400512A08 /* AppReducers.swift */; };
 		B3F25B402837888200512A08 /* Counter.docc in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B3F2837888200512A08 /* Counter.docc */; };
 		B3F25B462837888200512A08 /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B3C2837888200512A08 /* Counter.framework */; };
@@ -48,6 +46,8 @@
 		B3F25BB52837890A00512A08 /* ComposableArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F25BA52837890A00512A08 /* ComposableArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B3F25BB82837890A00512A08 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; };
 		B3F25BB92837890A00512A08 /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3F25BC02837892500512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
+		B3F25BC12837892500512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,8 +341,6 @@
 		6CF54C6B2807FC5900B92815 /* Composable SwiftUI App */ = {
 			isa = PBXGroup;
 			children = (
-				B3F25B312837866E00512A08 /* Store.swift */,
-				B3F25B332837868800512A08 /* ReducerTypeBox.swift */,
 				B3F25B302837865900512A08 /* App States */,
 				6CFE24A3282CDE3E003F6468 /* Unused.swift */,
 				B31266E5281521A700D46BBB /* Views */,
@@ -464,6 +462,8 @@
 		B3F25BA42837890900512A08 /* ComposableArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				B3F25B312837866E00512A08 /* Store.swift */,
+				B3F25B332837868800512A08 /* ReducerTypeBox.swift */,
 				B3F25BA52837890A00512A08 /* ComposableArchitecture.h */,
 				B3F25BA62837890A00512A08 /* ComposableArchitecture.docc */,
 			);
@@ -894,8 +894,6 @@
 				6CF54C6D2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift in Sources */,
 				B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */,
 				B31266E1281520C800D46BBB /* AppState.swift in Sources */,
-				B3F25B342837868800512A08 /* ReducerTypeBox.swift in Sources */,
-				B3F25B322837866E00512A08 /* Store.swift in Sources */,
 				B31266DF281520B300D46BBB /* CounterView.swift in Sources */,
 				B31266DA2815205700D46BBB /* Helpers.swift in Sources */,
 				B31266DD281520A200D46BBB /* IsPrimeSheetView.swift in Sources */,
@@ -973,6 +971,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F25BA72837890A00512A08 /* ComposableArchitecture.docc in Sources */,
+				B3F25BC12837892500512A08 /* ReducerTypeBox.swift in Sources */,
+				B3F25BC02837892500512A08 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1179,6 +1179,7 @@
 		6CF54C8E2807FC5A00B92815 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1208,6 +1209,7 @@
 		6CF54C8F2807FC5A00B92815 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

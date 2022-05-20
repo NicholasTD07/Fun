@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ReducerTypeBox<Value, Action> {
-    typealias Reducer = (inout Value, Action) -> Void
-    typealias HigherOrderReducer = (@escaping Reducer) -> Reducer
+public enum ReducerTypeBox<Value, Action> {
+    public typealias Reducer = (inout Value, Action) -> Void
+    public typealias HigherOrderReducer = (@escaping Reducer) -> Reducer
     
-    static func wrapping(
+    public static func wrapping(
         reducer: @escaping Reducer,
         with higherOrderReducers: [HigherOrderReducer]
     ) -> Reducer {
@@ -22,7 +22,7 @@ enum ReducerTypeBox<Value, Action> {
         return wrapped
     }
 
-    static func combine(
+    public static func combine(
       reducers: [(inout Value, Action) -> Void]
     ) -> (inout Value, Action) -> Void {
         { value, action in
@@ -32,7 +32,7 @@ enum ReducerTypeBox<Value, Action> {
         }
     }
     
-    static func pullback<LocalValue, LocalAction>(
+    public static func pullback<LocalValue, LocalAction>(
         reducer: @escaping (inout LocalValue, LocalAction) -> Void,
         writableValueKeyPath: WritableKeyPath<Value, LocalValue>,
         readableActionKeyPath: KeyPath<Action, LocalAction?>

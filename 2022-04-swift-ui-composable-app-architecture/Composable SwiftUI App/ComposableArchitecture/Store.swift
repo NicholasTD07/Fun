@@ -17,16 +17,16 @@ import Foundation
 
  */
 
-final class Store<Value, Action>: ObservableObject {
-    @Published private(set) var value: Value
+public final class Store<Value, Action>: ObservableObject {
+    @Published public private(set) var value: Value
     private let reducer: (inout Value, Action) -> Void
     
-    init(initialValue: Value, reducer:  @escaping (inout Value, Action) -> Void) {
+    public init(initialValue: Value, reducer:  @escaping (inout Value, Action) -> Void) {
         self.value = initialValue
         self.reducer = reducer
     }
     
-    func send(action: Action) {
+    public func send(action: Action) {
         reducer(&value, action)
     }
 }

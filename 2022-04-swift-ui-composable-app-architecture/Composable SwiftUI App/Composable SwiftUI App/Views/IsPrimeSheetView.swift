@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct IsPrimeSheetView: View {
     @ObservedObject var store: Store<AppState, AppAction>
