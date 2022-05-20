@@ -11,7 +11,7 @@ public enum FavoritePrimesAction {
     case deleteFavoritePrimes(IndexSet)
 }
 
-public func completeLocalFavoritePrimesReducer(value: inout [Int], action: FavoritePrimesAction) {
+public func favoritePrimesReducer(value: inout [Int], action: FavoritePrimesAction) {
     switch action {
     case .deleteFavoritePrimes(let indexSet):
         for index in indexSet {

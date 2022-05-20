@@ -11,11 +11,49 @@ import ComposableArchitecture
 
 import PrimeModal
 
-public typealias CounterViewState = (count: Int, savedPrimes: [Int])
+public struct CounterViewState {
+    public var count: Int
+    public var savedPrimes: [Int]
+    
+    public init(count: Int, savedPrimes: [Int]) {
+        self.count = count
+        self.savedPrimes = savedPrimes
+    }
+
+    var primeModal: PrimeModalState {
+        get {
+            (count: count, savedPrimes: savedPrimes)
+        }
+        set {
+            count = newValue.count
+            savedPrimes = newValue.savedPrimes
+        }
+    }
+}
 
 public enum CounterViewAction {
     case counter(CounterAction)
     case primeModal(PrimeModalAction)
+    
+    var counterAction: CounterAction? {
+        guard
+            case let .counter(action) = self
+        else {
+            return nil
+        }
+        
+        return action
+    }
+    
+    var primeModalAction: PrimeModalAction? {
+        guard
+            case let .primeModal(action) = self
+        else {
+            return nil
+        }
+        
+        return action
+    }
 }
 
 public struct CounterView: View {
@@ -101,14 +139,26 @@ private func ordinal(_ n: Int) -> String {
     return formatter.string(for: n)!
 }
 
-//struct CounterView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CounterView(
-//            store:
-//                Store(
-//                    initialValue: AppState(),
-//                    reducer: appReducer
-//                )
-//        )
-//    }
-//}
+private let box = ReducerTypeBox<CounterViewState, CounterViewAction>.self
+
+private let viewCounterReducer = box.pullback(reducer: counterReducer(value:action:), writableValueKeyPath: \.count, readableActionKeyPath: \.counterAction)
+private let viewPrimeModalReducer = box.pullback(reducer: primeModalReducer(value:action:), writableValueKeyPath: \.primeModal, readableActionKeyPath: \.primeModalAction)
+
+public let counterViewReducer = box.combine(
+    reducers: [
+        viewCounterReducer,
+        viewPrimeModalReducer,
+    ]
+)
+
+struct CounterView_Previews: PreviewProvider {
+    static var previews: some View {
+        CounterView(
+            store:
+                Store(
+                    initialValue: .init(count: 1_000_000, savedPrimes: [7, 11]),
+                    reducer: counterViewReducer
+                )
+        )
+    }
+}

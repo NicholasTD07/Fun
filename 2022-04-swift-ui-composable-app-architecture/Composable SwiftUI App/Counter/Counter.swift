@@ -12,7 +12,7 @@ public enum CounterAction {
     case incrTapped
 }
 
-public func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
+public func counterReducer(value: inout Int, action: CounterAction) {
     switch action {
     case .decrTapped:
         value -= 1

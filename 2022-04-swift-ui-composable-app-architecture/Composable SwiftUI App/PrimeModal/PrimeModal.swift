@@ -14,7 +14,7 @@ public enum PrimeModalAction {
     case removeFavoritePrimeTapped
 }
 
-public func actionLocalPrimeModalReducer(value: inout PrimeModalState, action: PrimeModalAction) {
+public func primeModalReducer(value: inout PrimeModalState, action: PrimeModalAction) {
     switch action {
     case .saveFavoritePrimeTapped:
         value.savedPrimes.append(value.count)

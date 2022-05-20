@@ -15,17 +15,17 @@ import PrimeModal
 // Reducers
 
 let counterReducerV3 = ReducerTypeBox.pullback(
-    reducer: completeLocalCounterReducer(value:action:),
+    reducer: counterReducer(value:action:),
     writableValueKeyPath: \AppState.count,
     readableActionKeyPath: \AppAction.counterAction
 )
 let primeModalReducer = ReducerTypeBox.pullback(
-    reducer: actionLocalPrimeModalReducer(value:action:),
+    reducer: primeModalReducer(value:action:),
     writableValueKeyPath: \AppState.primeModal,
     readableActionKeyPath: \AppAction.primeModalAction
 )
 let favoritePrimeReducer = ReducerTypeBox.pullback(
-    reducer: completeLocalFavoritePrimesReducer(value:action:),
+    reducer: favoritePrimesReducer(value:action:),
     writableValueKeyPath: \AppState.savedPrimes,
     readableActionKeyPath: \AppAction.favoritePrimes
 )

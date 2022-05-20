@@ -31,14 +31,13 @@ public struct FavoritePrimesView: View {
     }
 }
 
-//struct FavoritePrimesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoritePrimesView(
-//            store:
-//                Store(
-//                    initialValue: Store(initialValue: [7, 11], reducer: { _, _ in}),
-//                    reducer: appReducer
-//                )
-//        )
-//    }
-//}
+struct FavoritePrimesView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoritePrimesView(
+            store: Store(
+                initialValue: [7, 11],
+                reducer: favoritePrimesReducer
+            )
+        )
+    }
+}

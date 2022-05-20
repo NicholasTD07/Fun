@@ -33,7 +33,6 @@ public struct IsPrimeSheetView: View {
                     Text("Save to favorite primes!")
                 }
             }
-
         } else {
             Text("\(store.value.count) is not prime! 🙁")
         }
@@ -61,14 +60,14 @@ private func isPrime(_ n: Int) -> Bool {
     return true
 }
 
-//struct IsPrimeSheetView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IsPrimeSheetView(
-//            store:
-//                Store(
-//                    initialValue: AppState(),
-//                    reducer: appReducer
-//                )
-//        )
-//    }
-//}
+struct IsPrimeSheetView_Previews: PreviewProvider {
+    static var previews: some View {
+        IsPrimeSheetView(
+            store:
+                Store(
+                    initialValue: (2, [7, 11]),
+                    reducer: primeModalReducer
+                )
+        )
+    }
+}

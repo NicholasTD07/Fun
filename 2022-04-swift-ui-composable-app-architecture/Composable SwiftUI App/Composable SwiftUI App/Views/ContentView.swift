@@ -23,7 +23,7 @@ struct ContentView: View {
                 NavigationLink(
                     destination: CounterView(
                         store: store.transform {
-                            (count: $0.count, savedPrimes: $0.savedPrimes)
+                            .init(count: $0.count, savedPrimes: $0.savedPrimes)
                         } action: {
                             switch $0 {
                             case let .counter(action):
