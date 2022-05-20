@@ -6,27 +6,28 @@
 //
 
 import SwiftUI
+
 import ComposableArchitecture
 
-import FavoritePrimes
-
-struct FavoritePrimesView: View {
-    @ObservedObject var store: Store<[Int], AppAction>
+public struct FavoritePrimesView: View {
+    @ObservedObject var store: Store<[Int], FavoritePrimesAction>
     
-    var body: some View {
+    public var body: some View {
         List {
             ForEach(store.value, id: \.self) { prime in
                 Text("\(prime)")
             }
             .onDelete { indexSet in
                 store.send(
-                    action: .favoritePrimes(
-                        .deleteFavoritePrimes(indexSet)
-                    )
+                    action: .deleteFavoritePrimes(indexSet)
                 )
             }
         }
         .navigationTitle("FavoritePrimes")
+    }
+    
+    public init(store: Store<[Int], FavoritePrimesAction>) {
+        self.store = store
     }
 }
 

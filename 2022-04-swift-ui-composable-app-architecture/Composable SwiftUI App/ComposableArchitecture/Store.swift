@@ -34,10 +34,13 @@ public final class Store<Value, Action>: ObservableObject {
         reducer(&value, action)
     }
     
-    public func view<LocalValue>(transform: @escaping (Value) -> LocalValue) -> Store<LocalValue, Action> {
+    public func transform<LocalValue, LocalAction>(
+        value valueTransform: @escaping (Value) -> LocalValue,
+        action actionTransform: @escaping (LocalAction) -> Action
+    ) -> Store<LocalValue, LocalAction> {
         // 1. Transform the current store to a `Store` with `LocalValue`
-        let localStore = Store<LocalValue, Action>(
-            initialValue: transform(value)
+        let localStore = Store<LocalValue, LocalAction>(
+            initialValue: valueTransform(value)
         ) { [weak self] inoutLocalValue, action in
             guard let self = self else {
                 assertionFailure("A local store shouldn't reference the global store when it is gone...")
@@ -45,16 +48,16 @@ public final class Store<Value, Action>: ObservableObject {
             }
             
             // 2. Whatever Action happens on this local store is propagated back to the current store
-            self.reducer(&self.value, action)
+            self.reducer(&self.value, actionTransform(action))
             
             // 3. The result of the action is also propagted onto the local store as well
-            inoutLocalValue = transform(self.value)
+            inoutLocalValue = valueTransform(self.value)
         }
         
         // 4. Whatever change happens to the value on the global store
         //    is also propagated to the local store
         localStore.cancellable = self.$value.sink { [weak localStore] value in
-            localStore?.value = transform(value)
+            localStore?.value = valueTransform(value)
 
             if let localStore = localStore {
                 print(Unmanaged.passUnretained(localStore).toOpaque(), localStore.value)

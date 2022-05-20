@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+
 import ComposableArchitecture
 
-typealias CounterViewState = (count: Int, savedPrimes: [Int])
+import PrimeModal
 
-struct CounterView: View {
-    @ObservedObject var store: Store<CounterViewState, AppAction>
+public typealias CounterViewState = (count: Int, savedPrimes: [Int])
+
+public enum CounterViewAction {
+    case counter(CounterAction)
+    case primeModal(PrimeModalAction)
+}
+
+public struct CounterView: View {
+    @ObservedObject var store: Store<CounterViewState, CounterViewAction>
 
     @State var nthPrime: Int?
 
@@ -19,7 +27,7 @@ struct CounterView: View {
     @State var nthPrimeAlertShown = false
     @State var isNthPrimeDisabled = false
 
-    var body: some View {
+    public var body: some View {
         VStack {
             HStack {
                 Button {
@@ -41,7 +49,7 @@ struct CounterView: View {
             }
             Button {
                 isNthPrimeDisabled = true
-                Composable_SwiftUI_App.nthPrime(store.value.count) { optionalPrime in
+                Counter.nthPrime(store.value.count) { optionalPrime in
                     guard let prime = optionalPrime else {
                         return
                     }
@@ -62,7 +70,13 @@ struct CounterView: View {
         .sheet(isPresented: $isPrimeSheetShown) {
             // onDismiss
         } content: {
-            IsPrimeSheetView(store: store )
+            IsPrimeSheetView(
+                store: store.transform {
+                    ($0.count, $0.savedPrimes)
+                } action: { action in
+                    .primeModal(action)
+                }
+            )
         }
         .alert("nth Prime", isPresented: $nthPrimeAlertShown) {
             Text("Ok")
@@ -73,6 +87,18 @@ struct CounterView: View {
         }
 
     }
+    
+    public init(store: Store<CounterViewState, CounterViewAction>) {
+        self.store = store
+    }
+}
+
+private func ordinal(_ n: Int) -> String {
+    let formatter = NumberFormatter()
+    
+    formatter.numberStyle = .ordinal
+    
+    return formatter.string(for: n)!
 }
 
 //struct CounterView_Previews: PreviewProvider {

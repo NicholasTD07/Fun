@@ -6,23 +6,20 @@
 //
 
 import SwiftUI
+
 import ComposableArchitecture
 
-import PrimeModal
+public struct IsPrimeSheetView: View {
+    @ObservedObject var store: Store<PrimeModalState, PrimeModalAction>
 
-struct IsPrimeSheetView: View {
-    @ObservedObject var store: Store<PrimeModalState, AppAction>
-
-    var body: some View {
+    public var body: some View {
         if isPrime(store.value.count) {
             Text("\(store.value.count) is prime! 🎉")
             
             if store.value.savedPrimes.contains(store.value.count) {
                 Button {
                     store.send(
-                        action: .primeModal(
-                            .removeFavoritePrimeTapped
-                        )
+                        action: .removeFavoritePrimeTapped
                     )
                 } label: {
                     Text("Remove from favorite primes...")
@@ -30,9 +27,7 @@ struct IsPrimeSheetView: View {
             } else {
                 Button {
                     store.send(
-                        action: .primeModal(
-                            .saveFavoritePrimeTapped
-                        )
+                        action: .saveFavoritePrimeTapped
                     )
                 } label: {
                     Text("Save to favorite primes!")
@@ -43,6 +38,27 @@ struct IsPrimeSheetView: View {
             Text("\(store.value.count) is not prime! 🙁")
         }
     }
+    
+    public init(store: Store<PrimeModalState, PrimeModalAction>) {
+        self.store = store
+    }
+}
+
+private func isPrime(_ n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    if n <= 3 {
+        return true
+    }
+    
+    for i in 2...(Int(sqrtf(Float(n)))) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    
+    return true
 }
 
 //struct IsPrimeSheetView_Previews: PreviewProvider {
