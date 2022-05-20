@@ -21,6 +21,9 @@
 		B31266DF281520B300D46BBB /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266DE281520B300D46BBB /* CounterView.swift */; };
 		B31266E1281520C800D46BBB /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E0281520C800D46BBB /* AppState.swift */; };
 		B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31266E22815218B00D46BBB /* FavoritePrimesView.swift */; };
+		B3F25B322837866E00512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
+		B3F25B342837868800512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
+		B3F25B36283786B400512A08 /* AppReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B35283786B400512A08 /* AppReducers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		B31266DE281520B300D46BBB /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		B31266E0281520C800D46BBB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B31266E22815218B00D46BBB /* FavoritePrimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimesView.swift; sourceTree = "<group>"; };
+		B3F25B312837866E00512A08 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B3F25B332837868800512A08 /* ReducerTypeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerTypeBox.swift; sourceTree = "<group>"; };
+		B3F25B35283786B400512A08 /* AppReducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +116,9 @@
 		6CF54C6B2807FC5900B92815 /* Composable SwiftUI App */ = {
 			isa = PBXGroup;
 			children = (
-				6CF54C6C2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift */,
-				B31266E0281520C800D46BBB /* AppState.swift */,
+				B3F25B312837866E00512A08 /* Store.swift */,
+				B3F25B332837868800512A08 /* ReducerTypeBox.swift */,
+				B3F25B302837865900512A08 /* App States */,
 				6CFE24A3282CDE3E003F6468 /* Unused.swift */,
 				B31266E5281521A700D46BBB /* Views */,
 				B31266DB2815207F00D46BBB /* Helpers */,
@@ -160,12 +167,22 @@
 		B31266E5281521A700D46BBB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6CF54C6C2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift */,
 				6CF54C6E2807FC5900B92815 /* ContentView.swift */,
 				B31266E22815218B00D46BBB /* FavoritePrimesView.swift */,
 				B31266DE281520B300D46BBB /* CounterView.swift */,
 				B31266DC281520A200D46BBB /* IsPrimeSheetView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B3F25B302837865900512A08 /* App States */ = {
+			isa = PBXGroup;
+			children = (
+				B31266E0281520C800D46BBB /* AppState.swift */,
+				B3F25B35283786B400512A08 /* AppReducers.swift */,
+			);
+			path = "App States";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,9 +317,12 @@
 			files = (
 				B31266D82815203300D46BBB /* WolframAlphaAPI.swift in Sources */,
 				6CF54C6F2807FC5900B92815 /* ContentView.swift in Sources */,
+				B3F25B36283786B400512A08 /* AppReducers.swift in Sources */,
 				6CF54C6D2807FC5900B92815 /* Composable_SwiftUI_AppApp.swift in Sources */,
 				B31266E32815218B00D46BBB /* FavoritePrimesView.swift in Sources */,
 				B31266E1281520C800D46BBB /* AppState.swift in Sources */,
+				B3F25B342837868800512A08 /* ReducerTypeBox.swift in Sources */,
+				B3F25B322837866E00512A08 /* Store.swift in Sources */,
 				B31266DF281520B300D46BBB /* CounterView.swift in Sources */,
 				B31266DA2815205700D46BBB /* Helpers.swift in Sources */,
 				B31266DD281520A200D46BBB /* IsPrimeSheetView.swift in Sources */,
@@ -474,6 +494,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,6 +523,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
