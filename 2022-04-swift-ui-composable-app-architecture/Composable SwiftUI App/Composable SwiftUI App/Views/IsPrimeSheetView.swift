@@ -8,8 +8,10 @@
 import SwiftUI
 import ComposableArchitecture
 
+import PrimeModal
+
 struct IsPrimeSheetView: View {
-    @ObservedObject var store: Store<AppState, AppAction>
+    @ObservedObject var store: Store<PrimeModalState, AppAction>
 
     var body: some View {
         if isPrime(store.value.count) {
@@ -43,14 +45,14 @@ struct IsPrimeSheetView: View {
     }
 }
 
-struct IsPrimeSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        IsPrimeSheetView(
-            store:
-                Store(
-                    initialValue: AppState(),
-                    reducer: appReducer
-                )
-        )
-    }
-}
+//struct IsPrimeSheetView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        IsPrimeSheetView(
+//            store:
+//                Store(
+//                    initialValue: AppState(),
+//                    reducer: appReducer
+//                )
+//        )
+//    }
+//}

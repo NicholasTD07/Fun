@@ -7,15 +7,7 @@
 
 import Foundation
 
-public struct PrimeModalState {
-    public var count: Int
-    public var savedPrimes: [Int]
-    
-    public init(count: Int, savedPrimes: [Int]) {
-        self.count = count
-        self.savedPrimes = savedPrimes
-    }
-}
+public typealias PrimeModalState = (count: Int, savedPrimes: [Int])
 
 public enum PrimeModalAction {
     case saveFavoritePrimeTapped

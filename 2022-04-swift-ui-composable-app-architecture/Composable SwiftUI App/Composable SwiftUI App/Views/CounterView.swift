@@ -8,8 +8,10 @@
 import SwiftUI
 import ComposableArchitecture
 
+typealias CounterViewState = (count: Int, savedPrimes: [Int])
+
 struct CounterView: View {
-    @ObservedObject var store: Store<AppState, AppAction>
+    @ObservedObject var store: Store<CounterViewState, AppAction>
 
     @State var nthPrime: Int?
 
@@ -60,7 +62,7 @@ struct CounterView: View {
         .sheet(isPresented: $isPrimeSheetShown) {
             // onDismiss
         } content: {
-            IsPrimeSheetView(store: store)
+            IsPrimeSheetView(store: store )
         }
         .alert("nth Prime", isPresented: $nthPrimeAlertShown) {
             Text("Ok")
@@ -73,14 +75,14 @@ struct CounterView: View {
     }
 }
 
-struct CounterView_Previews: PreviewProvider {
-    static var previews: some View {
-        CounterView(
-            store:
-                Store(
-                    initialValue: AppState(),
-                    reducer: appReducer
-                )
-        )
-    }
-}
+//struct CounterView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CounterView(
+//            store:
+//                Store(
+//                    initialValue: AppState(),
+//                    reducer: appReducer
+//                )
+//        )
+//    }
+//}

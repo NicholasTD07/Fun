@@ -21,7 +21,7 @@ struct AppState {
     
     var primeModal: PrimeModalState {
         get {
-            .init(count: count, savedPrimes: savedPrimes)
+            (count: count, savedPrimes: savedPrimes)
         }
         set {
             count = newValue.count
