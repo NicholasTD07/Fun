@@ -24,6 +24,30 @@
 		B3F25B322837866E00512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
 		B3F25B342837868800512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
 		B3F25B36283786B400512A08 /* AppReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B35283786B400512A08 /* AppReducers.swift */; };
+		B3F25B402837888200512A08 /* Counter.docc in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B3F2837888200512A08 /* Counter.docc */; };
+		B3F25B462837888200512A08 /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B3C2837888200512A08 /* Counter.framework */; };
+		B3F25B4D2837888200512A08 /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B4C2837888200512A08 /* CounterTests.swift */; };
+		B3F25B4E2837888200512A08 /* Counter.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F25B3E2837888200512A08 /* Counter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F25B512837888200512A08 /* Counter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B3C2837888200512A08 /* Counter.framework */; };
+		B3F25B522837888200512A08 /* Counter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B3C2837888200512A08 /* Counter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3F25B63283788CA00512A08 /* PrimeModal.docc in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B62283788CA00512A08 /* PrimeModal.docc */; };
+		B3F25B69283788CA00512A08 /* PrimeModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B5F283788CA00512A08 /* PrimeModal.framework */; };
+		B3F25B70283788CA00512A08 /* PrimeModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B6F283788CA00512A08 /* PrimeModalTests.swift */; };
+		B3F25B71283788CA00512A08 /* PrimeModal.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F25B61283788CA00512A08 /* PrimeModal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F25B74283788CA00512A08 /* PrimeModal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B5F283788CA00512A08 /* PrimeModal.framework */; };
+		B3F25B75283788CA00512A08 /* PrimeModal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B5F283788CA00512A08 /* PrimeModal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3F25B85283788DA00512A08 /* FavoritePrimes.docc in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B84283788DA00512A08 /* FavoritePrimes.docc */; };
+		B3F25B8B283788DB00512A08 /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B81283788DA00512A08 /* FavoritePrimes.framework */; };
+		B3F25B92283788DB00512A08 /* FavoritePrimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B91283788DB00512A08 /* FavoritePrimesTests.swift */; };
+		B3F25B93283788DB00512A08 /* FavoritePrimes.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F25B83283788DA00512A08 /* FavoritePrimes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F25B96283788DB00512A08 /* FavoritePrimes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B81283788DA00512A08 /* FavoritePrimes.framework */; };
+		B3F25B97283788DB00512A08 /* FavoritePrimes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25B81283788DA00512A08 /* FavoritePrimes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B3F25BA72837890A00512A08 /* ComposableArchitecture.docc in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BA62837890A00512A08 /* ComposableArchitecture.docc */; };
+		B3F25BAD2837890A00512A08 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; };
+		B3F25BB42837890A00512A08 /* ComposableArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BB32837890A00512A08 /* ComposableArchitectureTests.swift */; };
+		B3F25BB52837890A00512A08 /* ComposableArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = B3F25BA52837890A00512A08 /* ComposableArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F25BB82837890A00512A08 /* ComposableArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; };
+		B3F25BB92837890A00512A08 /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +65,108 @@
 			remoteGlobalIDString = 6CF54C682807FC5900B92815;
 			remoteInfo = "Composable SwiftUI App";
 		};
+		B3F25B472837888200512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B3B2837888200512A08;
+			remoteInfo = Counter;
+		};
+		B3F25B492837888200512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CF54C682807FC5900B92815;
+			remoteInfo = "Composable SwiftUI App";
+		};
+		B3F25B4F2837888200512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B3B2837888200512A08;
+			remoteInfo = Counter;
+		};
+		B3F25B6A283788CA00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B5E283788CA00512A08;
+			remoteInfo = PrimeModal;
+		};
+		B3F25B6C283788CA00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CF54C682807FC5900B92815;
+			remoteInfo = "Composable SwiftUI App";
+		};
+		B3F25B72283788CA00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B5E283788CA00512A08;
+			remoteInfo = PrimeModal;
+		};
+		B3F25B8C283788DB00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B80283788DA00512A08;
+			remoteInfo = FavoritePrimes;
+		};
+		B3F25B8E283788DB00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CF54C682807FC5900B92815;
+			remoteInfo = "Composable SwiftUI App";
+		};
+		B3F25B94283788DB00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25B80283788DA00512A08;
+			remoteInfo = FavoritePrimes;
+		};
+		B3F25BAE2837890A00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25BA22837890900512A08;
+			remoteInfo = ComposableArchitecture;
+		};
+		B3F25BB02837890A00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CF54C682807FC5900B92815;
+			remoteInfo = "Composable SwiftUI App";
+		};
+		B3F25BB62837890A00512A08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CF54C612807FC5900B92815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F25BA22837890900512A08;
+			remoteInfo = ComposableArchitecture;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B3F25B562837888200512A08 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B3F25BB92837890A00512A08 /* ComposableArchitecture.framework in Embed Frameworks */,
+				B3F25B75283788CA00512A08 /* PrimeModal.framework in Embed Frameworks */,
+				B3F25B522837888200512A08 /* Counter.framework in Embed Frameworks */,
+				B3F25B97283788DB00512A08 /* FavoritePrimes.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6CF54C692807FC5900B92815 /* Composable SwiftUI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Composable SwiftUI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +191,26 @@
 		B3F25B312837866E00512A08 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B3F25B332837868800512A08 /* ReducerTypeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReducerTypeBox.swift; sourceTree = "<group>"; };
 		B3F25B35283786B400512A08 /* AppReducers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducers.swift; sourceTree = "<group>"; };
+		B3F25B3C2837888200512A08 /* Counter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Counter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B3E2837888200512A08 /* Counter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
+		B3F25B3F2837888200512A08 /* Counter.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Counter.docc; sourceTree = "<group>"; };
+		B3F25B452837888200512A08 /* CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B4C2837888200512A08 /* CounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTests.swift; sourceTree = "<group>"; };
+		B3F25B5F283788CA00512A08 /* PrimeModal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrimeModal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B61283788CA00512A08 /* PrimeModal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrimeModal.h; sourceTree = "<group>"; };
+		B3F25B62283788CA00512A08 /* PrimeModal.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PrimeModal.docc; sourceTree = "<group>"; };
+		B3F25B68283788CA00512A08 /* PrimeModalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimeModalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B6F283788CA00512A08 /* PrimeModalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeModalTests.swift; sourceTree = "<group>"; };
+		B3F25B81283788DA00512A08 /* FavoritePrimes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FavoritePrimes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B83283788DA00512A08 /* FavoritePrimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritePrimes.h; sourceTree = "<group>"; };
+		B3F25B84283788DA00512A08 /* FavoritePrimes.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = FavoritePrimes.docc; sourceTree = "<group>"; };
+		B3F25B8A283788DB00512A08 /* FavoritePrimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FavoritePrimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25B91283788DB00512A08 /* FavoritePrimesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimesTests.swift; sourceTree = "<group>"; };
+		B3F25BA32837890900512A08 /* ComposableArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ComposableArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25BA52837890A00512A08 /* ComposableArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposableArchitecture.h; sourceTree = "<group>"; };
+		B3F25BA62837890A00512A08 /* ComposableArchitecture.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ComposableArchitecture.docc; sourceTree = "<group>"; };
+		B3F25BAC2837890A00512A08 /* ComposableArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F25BB32837890A00512A08 /* ComposableArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitectureTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +218,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F25BB82837890A00512A08 /* ComposableArchitecture.framework in Frameworks */,
+				B3F25B74283788CA00512A08 /* PrimeModal.framework in Frameworks */,
+				B3F25B512837888200512A08 /* Counter.framework in Frameworks */,
+				B3F25B96283788DB00512A08 /* FavoritePrimes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +239,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3F25B392837888200512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B422837888200512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B462837888200512A08 /* Counter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B5C283788CA00512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B65283788CA00512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B69283788CA00512A08 /* PrimeModal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B7E283788DA00512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B87283788DB00512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B8B283788DB00512A08 /* FavoritePrimes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25BA02837890900512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25BA92837890A00512A08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25BAD2837890A00512A08 /* ComposableArchitecture.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,6 +308,14 @@
 				6CF54C6B2807FC5900B92815 /* Composable SwiftUI App */,
 				6CF54C7C2807FC5A00B92815 /* Composable SwiftUI AppTests */,
 				6CF54C862807FC5A00B92815 /* Composable SwiftUI AppUITests */,
+				B3F25B3D2837888200512A08 /* Counter */,
+				B3F25B4B2837888200512A08 /* CounterTests */,
+				B3F25B60283788CA00512A08 /* PrimeModal */,
+				B3F25B6E283788CA00512A08 /* PrimeModalTests */,
+				B3F25B82283788DA00512A08 /* FavoritePrimes */,
+				B3F25B90283788DB00512A08 /* FavoritePrimesTests */,
+				B3F25BA42837890900512A08 /* ComposableArchitecture */,
+				B3F25BB22837890A00512A08 /* ComposableArchitectureTests */,
 				6CF54C6A2807FC5900B92815 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +326,14 @@
 				6CF54C692807FC5900B92815 /* Composable SwiftUI App.app */,
 				6CF54C792807FC5A00B92815 /* Composable SwiftUI AppTests.xctest */,
 				6CF54C832807FC5A00B92815 /* Composable SwiftUI AppUITests.xctest */,
+				B3F25B3C2837888200512A08 /* Counter.framework */,
+				B3F25B452837888200512A08 /* CounterTests.xctest */,
+				B3F25B5F283788CA00512A08 /* PrimeModal.framework */,
+				B3F25B68283788CA00512A08 /* PrimeModalTests.xctest */,
+				B3F25B81283788DA00512A08 /* FavoritePrimes.framework */,
+				B3F25B8A283788DB00512A08 /* FavoritePrimesTests.xctest */,
+				B3F25BA32837890900512A08 /* ComposableArchitecture.framework */,
+				B3F25BAC2837890A00512A08 /* ComposableArchitectureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,7 +410,110 @@
 			path = "App States";
 			sourceTree = "<group>";
 		};
+		B3F25B3D2837888200512A08 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B3E2837888200512A08 /* Counter.h */,
+				B3F25B3F2837888200512A08 /* Counter.docc */,
+			);
+			path = Counter;
+			sourceTree = "<group>";
+		};
+		B3F25B4B2837888200512A08 /* CounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B4C2837888200512A08 /* CounterTests.swift */,
+			);
+			path = CounterTests;
+			sourceTree = "<group>";
+		};
+		B3F25B60283788CA00512A08 /* PrimeModal */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B61283788CA00512A08 /* PrimeModal.h */,
+				B3F25B62283788CA00512A08 /* PrimeModal.docc */,
+			);
+			path = PrimeModal;
+			sourceTree = "<group>";
+		};
+		B3F25B6E283788CA00512A08 /* PrimeModalTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B6F283788CA00512A08 /* PrimeModalTests.swift */,
+			);
+			path = PrimeModalTests;
+			sourceTree = "<group>";
+		};
+		B3F25B82283788DA00512A08 /* FavoritePrimes */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B83283788DA00512A08 /* FavoritePrimes.h */,
+				B3F25B84283788DA00512A08 /* FavoritePrimes.docc */,
+			);
+			path = FavoritePrimes;
+			sourceTree = "<group>";
+		};
+		B3F25B90283788DB00512A08 /* FavoritePrimesTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25B91283788DB00512A08 /* FavoritePrimesTests.swift */,
+			);
+			path = FavoritePrimesTests;
+			sourceTree = "<group>";
+		};
+		B3F25BA42837890900512A08 /* ComposableArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25BA52837890A00512A08 /* ComposableArchitecture.h */,
+				B3F25BA62837890A00512A08 /* ComposableArchitecture.docc */,
+			);
+			path = ComposableArchitecture;
+			sourceTree = "<group>";
+		};
+		B3F25BB22837890A00512A08 /* ComposableArchitectureTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3F25BB32837890A00512A08 /* ComposableArchitectureTests.swift */,
+			);
+			path = ComposableArchitectureTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B3F25B372837888200512A08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B4E2837888200512A08 /* Counter.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B5A283788CA00512A08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B71283788CA00512A08 /* PrimeModal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B7C283788DA00512A08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B93283788DB00512A08 /* FavoritePrimes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B9E2837890900512A08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25BB52837890A00512A08 /* ComposableArchitecture.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6CF54C682807FC5900B92815 /* Composable SwiftUI App */ = {
@@ -195,10 +523,15 @@
 				6CF54C652807FC5900B92815 /* Sources */,
 				6CF54C662807FC5900B92815 /* Frameworks */,
 				6CF54C672807FC5900B92815 /* Resources */,
+				B3F25B562837888200512A08 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B3F25B502837888200512A08 /* PBXTargetDependency */,
+				B3F25B73283788CA00512A08 /* PBXTargetDependency */,
+				B3F25B95283788DB00512A08 /* PBXTargetDependency */,
+				B3F25BB72837890A00512A08 /* PBXTargetDependency */,
 			);
 			name = "Composable SwiftUI App";
 			productName = "Composable SwiftUI App";
@@ -241,6 +574,154 @@
 			productReference = 6CF54C832807FC5A00B92815 /* Composable SwiftUI AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B3F25B3B2837888200512A08 /* Counter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B532837888200512A08 /* Build configuration list for PBXNativeTarget "Counter" */;
+			buildPhases = (
+				B3F25B372837888200512A08 /* Headers */,
+				B3F25B382837888200512A08 /* Sources */,
+				B3F25B392837888200512A08 /* Frameworks */,
+				B3F25B3A2837888200512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Counter;
+			productName = Counter;
+			productReference = B3F25B3C2837888200512A08 /* Counter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3F25B442837888200512A08 /* CounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B572837888200512A08 /* Build configuration list for PBXNativeTarget "CounterTests" */;
+			buildPhases = (
+				B3F25B412837888200512A08 /* Sources */,
+				B3F25B422837888200512A08 /* Frameworks */,
+				B3F25B432837888200512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3F25B482837888200512A08 /* PBXTargetDependency */,
+				B3F25B4A2837888200512A08 /* PBXTargetDependency */,
+			);
+			name = CounterTests;
+			productName = CounterTests;
+			productReference = B3F25B452837888200512A08 /* CounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3F25B5E283788CA00512A08 /* PrimeModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B76283788CA00512A08 /* Build configuration list for PBXNativeTarget "PrimeModal" */;
+			buildPhases = (
+				B3F25B5A283788CA00512A08 /* Headers */,
+				B3F25B5B283788CA00512A08 /* Sources */,
+				B3F25B5C283788CA00512A08 /* Frameworks */,
+				B3F25B5D283788CA00512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrimeModal;
+			productName = PrimeModal;
+			productReference = B3F25B5F283788CA00512A08 /* PrimeModal.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3F25B67283788CA00512A08 /* PrimeModalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B79283788CA00512A08 /* Build configuration list for PBXNativeTarget "PrimeModalTests" */;
+			buildPhases = (
+				B3F25B64283788CA00512A08 /* Sources */,
+				B3F25B65283788CA00512A08 /* Frameworks */,
+				B3F25B66283788CA00512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3F25B6B283788CA00512A08 /* PBXTargetDependency */,
+				B3F25B6D283788CA00512A08 /* PBXTargetDependency */,
+			);
+			name = PrimeModalTests;
+			productName = PrimeModalTests;
+			productReference = B3F25B68283788CA00512A08 /* PrimeModalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3F25B80283788DA00512A08 /* FavoritePrimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B98283788DB00512A08 /* Build configuration list for PBXNativeTarget "FavoritePrimes" */;
+			buildPhases = (
+				B3F25B7C283788DA00512A08 /* Headers */,
+				B3F25B7D283788DA00512A08 /* Sources */,
+				B3F25B7E283788DA00512A08 /* Frameworks */,
+				B3F25B7F283788DA00512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FavoritePrimes;
+			productName = FavoritePrimes;
+			productReference = B3F25B81283788DA00512A08 /* FavoritePrimes.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3F25B89283788DB00512A08 /* FavoritePrimesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25B9B283788DB00512A08 /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */;
+			buildPhases = (
+				B3F25B86283788DB00512A08 /* Sources */,
+				B3F25B87283788DB00512A08 /* Frameworks */,
+				B3F25B88283788DB00512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3F25B8D283788DB00512A08 /* PBXTargetDependency */,
+				B3F25B8F283788DB00512A08 /* PBXTargetDependency */,
+			);
+			name = FavoritePrimesTests;
+			productName = FavoritePrimesTests;
+			productReference = B3F25B8A283788DB00512A08 /* FavoritePrimesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3F25BA22837890900512A08 /* ComposableArchitecture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25BBA2837890A00512A08 /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */;
+			buildPhases = (
+				B3F25B9E2837890900512A08 /* Headers */,
+				B3F25B9F2837890900512A08 /* Sources */,
+				B3F25BA02837890900512A08 /* Frameworks */,
+				B3F25BA12837890900512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComposableArchitecture;
+			productName = ComposableArchitecture;
+			productReference = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B3F25BAB2837890A00512A08 /* ComposableArchitectureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3F25BBD2837890A00512A08 /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */;
+			buildPhases = (
+				B3F25BA82837890A00512A08 /* Sources */,
+				B3F25BA92837890A00512A08 /* Frameworks */,
+				B3F25BAA2837890A00512A08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3F25BAF2837890A00512A08 /* PBXTargetDependency */,
+				B3F25BB12837890A00512A08 /* PBXTargetDependency */,
+			);
+			name = ComposableArchitectureTests;
+			productName = ComposableArchitectureTests;
+			productReference = B3F25BAC2837890A00512A08 /* ComposableArchitectureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,6 +743,34 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 6CF54C682807FC5900B92815;
 					};
+					B3F25B3B2837888200512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					B3F25B442837888200512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6CF54C682807FC5900B92815;
+					};
+					B3F25B5E283788CA00512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					B3F25B67283788CA00512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6CF54C682807FC5900B92815;
+					};
+					B3F25B80283788DA00512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					B3F25B89283788DB00512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6CF54C682807FC5900B92815;
+					};
+					B3F25BA22837890900512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					B3F25BAB2837890A00512A08 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 6CF54C682807FC5900B92815;
+					};
 				};
 			};
 			buildConfigurationList = 6CF54C642807FC5900B92815 /* Build configuration list for PBXProject "Composable SwiftUI App" */;
@@ -280,6 +789,14 @@
 				6CF54C682807FC5900B92815 /* Composable SwiftUI App */,
 				6CF54C782807FC5A00B92815 /* Composable SwiftUI AppTests */,
 				6CF54C822807FC5A00B92815 /* Composable SwiftUI AppUITests */,
+				B3F25B3B2837888200512A08 /* Counter */,
+				B3F25B442837888200512A08 /* CounterTests */,
+				B3F25B5E283788CA00512A08 /* PrimeModal */,
+				B3F25B67283788CA00512A08 /* PrimeModalTests */,
+				B3F25B80283788DA00512A08 /* FavoritePrimes */,
+				B3F25B89283788DB00512A08 /* FavoritePrimesTests */,
+				B3F25BA22837890900512A08 /* ComposableArchitecture */,
+				B3F25BAB2837890A00512A08 /* ComposableArchitectureTests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +819,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6CF54C812807FC5A00B92815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B3A2837888200512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B432837888200512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B5D283788CA00512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B66283788CA00512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B7F283788DA00512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B88283788DB00512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25BA12837890900512A08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25BAA2837890A00512A08 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,6 +920,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3F25B382837888200512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B402837888200512A08 /* Counter.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B412837888200512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B4D2837888200512A08 /* CounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B5B283788CA00512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B63283788CA00512A08 /* PrimeModal.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B64283788CA00512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B70283788CA00512A08 /* PrimeModalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B7D283788DA00512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B85283788DA00512A08 /* FavoritePrimes.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B86283788DB00512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25B92283788DB00512A08 /* FavoritePrimesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25B9F2837890900512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25BA72837890A00512A08 /* ComposableArchitecture.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3F25BA82837890A00512A08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3F25BB42837890A00512A08 /* ComposableArchitectureTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -359,6 +996,66 @@
 			isa = PBXTargetDependency;
 			target = 6CF54C682807FC5900B92815 /* Composable SwiftUI App */;
 			targetProxy = 6CF54C842807FC5A00B92815 /* PBXContainerItemProxy */;
+		};
+		B3F25B482837888200512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B3B2837888200512A08 /* Counter */;
+			targetProxy = B3F25B472837888200512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B4A2837888200512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CF54C682807FC5900B92815 /* Composable SwiftUI App */;
+			targetProxy = B3F25B492837888200512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B502837888200512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B3B2837888200512A08 /* Counter */;
+			targetProxy = B3F25B4F2837888200512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B6B283788CA00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B5E283788CA00512A08 /* PrimeModal */;
+			targetProxy = B3F25B6A283788CA00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B6D283788CA00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CF54C682807FC5900B92815 /* Composable SwiftUI App */;
+			targetProxy = B3F25B6C283788CA00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B73283788CA00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B5E283788CA00512A08 /* PrimeModal */;
+			targetProxy = B3F25B72283788CA00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B8D283788DB00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B80283788DA00512A08 /* FavoritePrimes */;
+			targetProxy = B3F25B8C283788DB00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B8F283788DB00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CF54C682807FC5900B92815 /* Composable SwiftUI App */;
+			targetProxy = B3F25B8E283788DB00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25B95283788DB00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25B80283788DA00512A08 /* FavoritePrimes */;
+			targetProxy = B3F25B94283788DB00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25BAF2837890A00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25BA22837890900512A08 /* ComposableArchitecture */;
+			targetProxy = B3F25BAE2837890A00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25BB12837890A00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CF54C682807FC5900B92815 /* Composable SwiftUI App */;
+			targetProxy = B3F25BB02837890A00512A08 /* PBXContainerItemProxy */;
+		};
+		B3F25BB72837890A00512A08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F25BA22837890900512A08 /* ComposableArchitecture */;
+			targetProxy = B3F25BB62837890A00512A08 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -609,6 +1306,374 @@
 			};
 			name = Release;
 		};
+		B3F25B542837888200512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.Counter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3F25B552837888200512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.Counter;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3F25B582837888200512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Debug;
+		};
+		B3F25B592837888200512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.CounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Release;
+		};
+		B3F25B77283788CA00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.PrimeModal;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3F25B78283788CA00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.PrimeModal;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3F25B7A283788CA00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.PrimeModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Debug;
+		};
+		B3F25B7B283788CA00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.PrimeModalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Release;
+		};
+		B3F25B99283788DB00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3F25B9A283788DB00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.FavoritePrimes;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3F25B9C283788DB00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Debug;
+		};
+		B3F25B9D283788DB00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.FavoritePrimesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Release;
+		};
+		B3F25BBB2837890A00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B3F25BBC2837890A00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.ComposableArchitecture;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3F25BBE2837890A00512A08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.ComposableArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Debug;
+		};
+		B3F25BBF2837890A00512A08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.nickTD.CSA.ComposableArchitectureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Composable SwiftUI App.app/Composable SwiftUI App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -644,6 +1709,78 @@
 			buildConfigurations = (
 				6CF54C942807FC5A00B92815 /* Debug */,
 				6CF54C952807FC5A00B92815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B532837888200512A08 /* Build configuration list for PBXNativeTarget "Counter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B542837888200512A08 /* Debug */,
+				B3F25B552837888200512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B572837888200512A08 /* Build configuration list for PBXNativeTarget "CounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B582837888200512A08 /* Debug */,
+				B3F25B592837888200512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B76283788CA00512A08 /* Build configuration list for PBXNativeTarget "PrimeModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B77283788CA00512A08 /* Debug */,
+				B3F25B78283788CA00512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B79283788CA00512A08 /* Build configuration list for PBXNativeTarget "PrimeModalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B7A283788CA00512A08 /* Debug */,
+				B3F25B7B283788CA00512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B98283788DB00512A08 /* Build configuration list for PBXNativeTarget "FavoritePrimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B99283788DB00512A08 /* Debug */,
+				B3F25B9A283788DB00512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25B9B283788DB00512A08 /* Build configuration list for PBXNativeTarget "FavoritePrimesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25B9C283788DB00512A08 /* Debug */,
+				B3F25B9D283788DB00512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25BBA2837890A00512A08 /* Build configuration list for PBXNativeTarget "ComposableArchitecture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25BBB2837890A00512A08 /* Debug */,
+				B3F25BBC2837890A00512A08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3F25BBD2837890A00512A08 /* Build configuration list for PBXNativeTarget "ComposableArchitectureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3F25BBE2837890A00512A08 /* Debug */,
+				B3F25BBF2837890A00512A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
