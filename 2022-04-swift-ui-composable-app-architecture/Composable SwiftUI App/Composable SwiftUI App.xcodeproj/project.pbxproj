@@ -48,6 +48,7 @@
 		B3F25BB92837890A00512A08 /* ComposableArchitecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B3F25BA32837890900512A08 /* ComposableArchitecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B3F25BC02837892500512A08 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B312837866E00512A08 /* Store.swift */; };
 		B3F25BC12837892500512A08 /* ReducerTypeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25B332837868800512A08 /* ReducerTypeBox.swift */; };
+		B3F25BC3283789B600512A08 /* FavoritePrimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F25BC2283789B600512A08 /* FavoritePrimes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		B3F25BA62837890A00512A08 /* ComposableArchitecture.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ComposableArchitecture.docc; sourceTree = "<group>"; };
 		B3F25BAC2837890A00512A08 /* ComposableArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposableArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F25BB32837890A00512A08 /* ComposableArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableArchitectureTests.swift; sourceTree = "<group>"; };
+		B3F25BC2283789B600512A08 /* FavoritePrimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePrimes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 		B3F25B82283788DA00512A08 /* FavoritePrimes */ = {
 			isa = PBXGroup;
 			children = (
+				B3F25BC2283789B600512A08 /* FavoritePrimes.swift */,
 				B3F25B83283788DA00512A08 /* FavoritePrimes.h */,
 				B3F25B84283788DA00512A08 /* FavoritePrimes.docc */,
 			);
@@ -955,6 +958,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F25B85283788DA00512A08 /* FavoritePrimes.docc in Sources */,
+				B3F25BC3283789B600512A08 /* FavoritePrimes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

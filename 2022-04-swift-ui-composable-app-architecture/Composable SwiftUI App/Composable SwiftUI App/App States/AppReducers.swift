@@ -8,6 +8,8 @@
 import Foundation
 import ComposableArchitecture
 
+import FavoritePrimes
+
 // Reducers
 
 func completeLocalCounterReducer(value: inout Int, action: CounterAction) {
@@ -26,15 +28,6 @@ func actionLocalPrimeModalReducer(value: inout AppState, action: PrimeModalActio
     case .removeFavoritePrimeTapped:
         value.savedPrimes.removeAll {
             $0 == value.count
-        }
-    }
-}
-
-func completeLocalFavoritePrimesReducer(value: inout [Int], action: FavoritePrimesAction) {
-    switch action {
-    case .deleteFavoritePrimes(let indexSet):
-        for index in indexSet {
-            value.remove(at: index)
         }
     }
 }

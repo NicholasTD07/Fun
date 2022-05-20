@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import FileProvider
-import SwiftUI
+
+import FavoritePrimes
 
 // States
 
@@ -46,9 +46,6 @@ enum PrimeModalAction {
     case removeFavoritePrimeTapped
 }
 
-enum FavoritePrimesAction {
-    case deleteFavoritePrimes(IndexSet)
-}
 
 enum AppAction {
     case counter(CounterAction)
